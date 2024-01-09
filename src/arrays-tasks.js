@@ -158,11 +158,8 @@ function getAverage(arr) {
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
 function isSameLength(arr) {
-  const result = arr.filter((a) => a.length !== arr[0].length);
-  if (result.length >= 1) {
-    return false;
-  }
-  return true;
+  const result = arr.every((a) => a.length === arr[0].length);
+  return result;
 }
 
 /**
