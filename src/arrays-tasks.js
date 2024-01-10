@@ -500,8 +500,17 @@ function getHexRGBValues(arr) {
  *   getMaxItems([ 10, 2, 7, 5, 3, -5 ], 3) => [ 10, 7, 5 ]
  *   getMaxItems([ 10, 10, 10, 10 ], 3) => [ 10, 10, 10 ]
  */
-function getMaxItems(/* arr, n */) {
-  throw new Error('Not implemented');
+function getMaxItems(arr, n) {
+  const result = [];
+  const temp = arr.sort((a, b) => b - a);
+  if (n <= arr.length) {
+    for (let i = 0; i < n; i += 1) {
+      result.push(temp[i]);
+    }
+  } else {
+    return [];
+  }
+  return result;
 }
 
 /**
