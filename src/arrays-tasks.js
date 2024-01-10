@@ -646,8 +646,43 @@ function shiftArray(arr, n) {
  *   sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]) => [ 'eight','eight','nine','nine']
  *   sortDigitNamesByNumericOrder([ 'one','one','one','zero' ]) => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const numW = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  const numN = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  let temp = [];
+  const result = [];
+
+  for (let i = 0; i < arr.length; i += 1) {
+    for (let j = 0; j < numW.length; j += 1) {
+      if (arr[i] === numW[j]) {
+        temp.push(numN[j]);
+      }
+    }
+  }
+
+  temp = temp.sort((a, b) => a - b);
+
+  for (let i = 0; i < temp.length; i += 1) {
+    for (let j = 0; j < numN.length; j += 1) {
+      if (temp[i] === numN[j]) {
+        result.push(numW[j]);
+      }
+    }
+  }
+
+  return result;
 }
 
 /**
