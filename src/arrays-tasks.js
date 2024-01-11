@@ -711,20 +711,17 @@ function swapHeadAndTail(arr) {
   let result = [];
 
   if (arr.length % 2 === 0) {
-    head = arr.splice(0, arr.length / 2); // ?
-    tail = arr; // ?
+    head = arr.splice(0, arr.length / 2);
+    tail = arr;
   } else if (arr.length % 2 !== 0) {
-    head = arr.splice(0, arr.length / 2); // ?
-    middle = arr.splice(0, arr.length - head.length); // ?
-    tail = arr.splice(arr.length - head.length); // ?
+    head = arr.splice(0, arr.length / 2);
+    middle = arr.splice(0, arr.length - head.length);
+    tail = arr.splice(arr.length - head.length);
   }
   result = [...tail, ...middle, ...head];
   return result;
 }
-// swapHeadAndTail([1, 2, 3, 4, 5, 6]); // ?
-// swapHeadAndTail([1, 2, 3, 4, 5, 6, 7, 8, 9]); // ?
-// swapHeadAndTail([1]) //?
-// swapHeadAndTail([]) //?
+
 module.exports = {
   getIntervalArray,
   sumArrays,
