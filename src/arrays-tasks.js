@@ -21,10 +21,15 @@
  *    getIntervalArray(3, 3) => [ 3 ]
  */
 function getIntervalArray(start, end) {
-  const result = [];
-  for (let i = start, j = 0; i <= end; i += 1, j += 1) {
-    result[j] = i;
-  }
+  const result = Array(Math.abs(end - start) + 1).fill(start);
+  Array.from(result);
+  let num = start;
+  result.map((item, i) => {
+    result[i] = num;
+    num += 1;
+    return result;
+  });
+
   return result;
 }
 
